@@ -35,7 +35,7 @@ int handle_write_char(char c, char buffer[],
 					write(1, &buffer[BUFF_SIZE - i - 1], width - 1));
 		else
 			return (write(1, &buffer[BUFF_SIZE - i - 1], width - 1) +
-					write(1, &buffer[0], 1))
+					write(1, &buffer[0], 1));
 	}
 	return (write(1, &buffer[0], 1));
 }
@@ -96,7 +96,7 @@ int write_num(int ind, char buffer[],
 	while (prec > length)
 		buffer[--ind] = '0', length++;
 	if (extra_c != 0)
-		ength++;
+		length++;
 	if (width > length)
 	{
 		for (i = 1; i < width - length + 1; i++)
